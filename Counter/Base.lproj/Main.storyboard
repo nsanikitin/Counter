@@ -114,7 +114,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <connections>
-                        <outlet property="history" destination="fBQ-tJ-FOg" id="8tY-IG-msv"/>
+                        <outlet property="historyTextView" destination="fBQ-tJ-FOg" id="bOf-LZ-6Fu"/>
                         <outlet property="minusButton" destination="nxs-ge-LEQ" id="xij-5T-Ypb"/>
                         <outlet property="plusButton" destination="yqf-0g-KkY" id="h6g-fz-ygg"/>
                         <outlet property="toNillButton" destination="70a-NV-0ER" id="Dcg-CT-jMZ"/>

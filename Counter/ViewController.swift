@@ -7,26 +7,26 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+final class ViewController: UIViewController {
     
     @IBOutlet weak private var value: UILabel!
     @IBOutlet weak private var plusButton: UIButton!
     @IBOutlet weak private var minusButton: UIButton!
     @IBOutlet weak private var toNillButton: UIButton!
-    @IBOutlet weak private var history: UITextView!
+    @IBOutlet weak private var historyTextView: UITextView!
     private var count: UInt = 0 //переменная для значения счетчика в label
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        history.isEditable = false
-        history.isScrollEnabled = true
+        historyTextView.isEditable = false
+        historyTextView.isScrollEnabled = true
     }
     
     //нажатие кнопки +
     @IBAction private func buttonPlusDidTape(_ sender: Any) {
         count += 1  //увеличиваем значение на 1
         value.text = "Значение счетчика: \(count)"  //отображаем текст в label
-        history.insertText("\n \(Date().rusFormat): значение изменено на +1") //добавляем событие в историю изменений
+        historyTextView.insertText("\n \(Date().rusFormat): значение изменено на +1") //добавляем событие в историю изменений
     }
     
     //нажатие кнопки -
@@ -34,9 +34,9 @@ class ViewController: UIViewController {
         if count > 0 {
             count -= 1  //уменьшаем значение на -1
             value.text = "Значение счетчика: \(count)"  //отображаем текст в label
-            history.insertText("\n \(Date().rusFormat): значение изменено на -1") //добавляем событие в историю изменений
+            historyTextView.insertText("\n \(Date().rusFormat): значение изменено на -1") //добавляем событие в историю изменений
         } else {
-            history.insertText("\n \(Date().rusFormat): попытка уменьшить значение счётчика ниже 0") //добавляем событие в историю изменений
+            historyTextView.insertText("\n \(Date().rusFormat): попытка уменьшить значение счётчика ниже 0") //добавляем событие в историю изменений
         }
     }
     
@@ -44,7 +44,7 @@ class ViewController: UIViewController {
     @IBAction private func buttonToNillDidTape(_ sender: Any) {
         count = 0   //обнуляем значение счетчика
         value.text = "Значение счетчика: \(count)"  //отображаем текст в label
-        history.insertText("\n \(Date().rusFormat): значение сброшено") //добавляем событие в историю изменений
+        historyTextView.insertText("\n \(Date().rusFormat): значение сброшено") //добавляем событие в историю изменений
     }
 }
 
